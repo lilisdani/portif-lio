@@ -1,5 +1,3 @@
-console.log("Script carregado");
-
 // Função para definir um cookie
 function setCookie(name, value, days) {
     var expires = "";
@@ -9,6 +7,7 @@ function setCookie(name, value, days) {
         expires = "; expires=" + date.toUTCString();
     }
     document.cookie = name + "=" + (value || "") + expires + "; path=/";
+    console.log("Cookie set: " + document.cookie);
 }
 
 // Função para ler um cookie
@@ -23,10 +22,10 @@ function getCookie(name) {
     return null;
 }
 
-// Executa quando o DOM estiver completamente carregado
+// Quando a página carrega
 document.addEventListener("DOMContentLoaded", function() {
-    // Verifica se o cookie foi aceito
-    if (getCookie("cookiesAccepted")) {
+    // Verifica se o cookie foi aceito ou rejeitado
+    if (getCookie("cookiesAccepted") || getCookie("cookiesRejected")) {
         document.getElementById('cookie-banner').style.display = 'none';
     } else {
         document.getElementById('cookie-banner').style.display = 'block';
@@ -37,7 +36,28 @@ document.addEventListener("DOMContentLoaded", function() {
         setCookie("cookiesAccepted", "true", 365); // Define o cookie para expirar em 365 dias
         document.getElementById('cookie-banner').style.display = 'none'; // Oculta o banner
     });
+
+    // Configura o botão de rejeitar cookies
+    document.getElementById('reject-cookies').addEventListener('click', function() {
+        setCookie("cookiesRejected", "true", 365); // Define o cookie de rejeição para expirar em 365 dias
+        document.getElementById('cookie-banner').style.display = 'none'; // Oculta o banner
+    });
 });
 
 
+//card projeto função
 
+document.addEventListener("DOMContentLoaded", function() {
+    var projectHeaders = document.querySelectorAll('.project-header');
+
+    projectHeaders.forEach(function(header) {
+        header.addEventListener('click', function() {
+            var content = this.nextElementSibling;
+            if (content.style.display === 'none' || content.style.display === '') {
+                content.style.display = 'block';
+            } else {
+                content.style.display = 'none';
+            }
+        });
+    });
+});

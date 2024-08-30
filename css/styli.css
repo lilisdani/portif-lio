@@ -90,7 +90,7 @@ p {
 }
 
 section#skills-bar {
-    padding: 2em;
+    padding: 1em;
     text-align: center;
     background-color: #FFFFFF;
 }
@@ -108,46 +108,48 @@ section#skills-bar {
 
 section#projects {
     padding: 2em;
-    background-color: #4e5a42;
+    background-color: #ffffff;
+}
+
+#projects {
+    margin: 20px;
 }
 
 .project-card {
-    background-color: #FFFFFF;
-    border: 2px solid #2F4F4F;
-    border-radius: 10px;
-    padding: 1em;
-    margin-bottom: 1.5em;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    cursor: pointer;
 }
 
-.project-card:hover {
-    border-color: #2dfa7b;
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+.project-header {
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #f7f7f7;
+    padding: 10px;
+    border-radius: 5px;
+    color: rgb(119, 37, 37);
 }
 
-.project-card h3 {
-    margin-top: 0;
-    color: #2F4F4F;
+.project-content {
+    padding: 10px;
+    background-color: #dddfe0;
+    border-top: 1px solid #ddd;
+    border-radius: 5px;
 }
 
-.project-card a {
-    display: inline-block;
-    margin-top: 1em;
-    color: #FFCC00;
+.project-content a {
+    color: #c86d3f;
     text-decoration: none;
     font-weight: bold;
 }
 
-.project-card a:hover {
+.project-content a:hover {
     text-decoration: underline;
 }
 
-/* Seção do Blog na Página Inicial */
-section#blog {
-    padding: 2em;
-    background-color: #FFFFFF;
-}
 
 .blog-preview {
     display: flex;
@@ -199,26 +201,30 @@ section#all-posts .blog-post {
     position: fixed;
     bottom: 0;
     width: 100%;
-    background-color: #3b3326;
-    color: white;
-    text-align: center;
-    padding: 1em;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    display: none; /* O JavaScript irá controlar quando o banner será exibido */
     z-index: 1000;
+    text-align: center;
 }
 
 #cookie-banner p {
     margin: 0;
-    display: inline;
+    display: inline-block;
 }
 
-#cookie-banner button {
-    background-color: #c86d3f;
+#accept-cookies, #reject-cookies {
+    background-color: #084da8;
     color: white;
     border: none;
-    padding: 0.5em 1em;
+    padding: 5px 10px;
+    margin-left: 15px;
     cursor: pointer;
-    margin-left: 1em;
-    border-radius: 5px;
+}
+
+#accept-cookies:hover, #reject-cookies:hover {
+    background-color: #09aa31;
 }
 
 

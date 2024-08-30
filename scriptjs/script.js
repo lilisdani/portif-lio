@@ -1,3 +1,5 @@
+console.log("Script carregado");
+
 // Função para definir um cookie
 function setCookie(name, value, days) {
     var expires = "";
@@ -21,18 +23,21 @@ function getCookie(name) {
     return null;
 }
 
-// Quando a página carrega
-window.onload = function() {
+// Executa quando o DOM estiver completamente carregado
+document.addEventListener("DOMContentLoaded", function() {
     // Verifica se o cookie foi aceito
     if (getCookie("cookiesAccepted")) {
         document.getElementById('cookie-banner').style.display = 'none';
     } else {
         document.getElementById('cookie-banner').style.display = 'block';
     }
-};
 
-// Configura o botão de aceitar cookies
-document.getElementById('accept-cookies').addEventListener('click', function() {
-    setCookie("cookiesAccepted", "true", 365); // Define o cookie para expirar em 365 dias
-    document.getElementById('cookie-banner').style.display = 'none'; // Oculta o banner
+    // Configura o botão de aceitar cookies
+    document.getElementById('accept-cookies').addEventListener('click', function() {
+        setCookie("cookiesAccepted", "true", 365); // Define o cookie para expirar em 365 dias
+        document.getElementById('cookie-banner').style.display = 'none'; // Oculta o banner
+    });
 });
+
+
+
